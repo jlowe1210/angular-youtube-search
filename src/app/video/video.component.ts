@@ -23,11 +23,11 @@ export class VideoComponent implements OnInit, OnChanges {
     this.title = changes.items.currentValue[0].snippet.title;
     this.description = changes.items.currentValue[0].snippet.description;
     
-    this.src = this.sanitizer.bypassSecurityTrustResourceUrl('http://www.youtube.com/embed/' + changes.items.currentValue[0].id.videoId)
+    this.src = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + changes.items.currentValue[0].id.videoId)
     }else{
       this.title = '';
       this.description = '';
-      this.src = this.sanitizer.bypassSecurityTrustResourceUrl('http://www.youtube.com/embed/' + 'TetN3li3Lfg')
+      this.src = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + 'TetN3li3Lfg')
     }
   }
 
@@ -35,7 +35,7 @@ export class VideoComponent implements OnInit, OnChanges {
     this.utube.video$.subscribe(val => {
       this.title = val.snippet.title;
       this.description = val.snippet.description;
-      this.src = this.sanitizer.bypassSecurityTrustResourceUrl('http://www.youtube.com/embed/' + val.id.videoId)
+      this.src = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + val.id.videoId)
     })
   }
 

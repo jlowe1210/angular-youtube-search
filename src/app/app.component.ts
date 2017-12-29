@@ -21,11 +21,9 @@ export class AppComponent implements OnInit {
     .switchMap(val => this.utube.utubesearch(val))
     .subscribe(val => {
       this.items = val['items'];
-      console.log(this.items)
     })
     this.utube.utubesearch('cats').subscribe(val => {
       this.items = val['items']
-      console.log(this.items)
     })
   }
 
