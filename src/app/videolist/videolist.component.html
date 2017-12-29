@@ -1,0 +1,22 @@
+
+
+<p *ngIf='items?.length === 0; else videos'>
+  <span>No videos Found</span>
+</p>
+
+
+
+<ul class="col-md-4 list-group">
+  <app-videoitem *ngFor='let vid of items' #video (click)='utube.video$.next(vid)'>
+    <div class="video-list media">
+      <div class="media-left">
+          <img [src]='vid.snippet.thumbnails.default.url' width="120" height="90" class="media-object" />
+      </div>
+      <div class="media-body">
+        <div class="media-heading">
+          {{vid.snippet.title}}
+        </div>
+      </div>
+    </div>
+  </app-videoitem>
+</ul>
